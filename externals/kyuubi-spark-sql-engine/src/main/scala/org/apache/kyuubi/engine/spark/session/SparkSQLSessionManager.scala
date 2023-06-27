@@ -146,7 +146,7 @@ class SparkSQLSessionManager private (name: String, spark: SparkSession)
         } catch {
           case e: Exception => throw KyuubiSQLException(e)
         }
-
+      SparkSession.setActiveSession(sparkSession)
       new SparkSessionImpl(
         protocol,
         user,

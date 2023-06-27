@@ -117,5 +117,6 @@ class SparkSessionImpl(
     sessionManager.operationManager.asInstanceOf[SparkSQLOperationManager].closeILoop(handle)
     sessionManager.operationManager.asInstanceOf[SparkSQLOperationManager].closePythonProcess(
       handle)
+    SparkSession.clearActiveSession()
   }
 }
